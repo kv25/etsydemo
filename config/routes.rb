@@ -2,7 +2,7 @@ Etsydemo::Application.routes.draw do
 
   devise_for :users
   resources :listings do
-    resources :orders
+    resources :orders, only: [:new, :create]
   end
 
   devise_for :users
@@ -11,6 +11,8 @@ Etsydemo::Application.routes.draw do
   get "pages/about"
   get "pages/contact"
   get 'seller' => "listings#seller"
+  get 'sales' => "orders#sales"
+  get 'purchases' => "orders#purchases"
 
   root 'listings#index'
 
