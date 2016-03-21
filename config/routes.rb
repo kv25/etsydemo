@@ -5,9 +5,6 @@ Etsydemo::Application.routes.draw do
     resources :orders, only: [:new, :create]
   end
 
-  devise_for :users
-  resources :listings
-
   get "pages/about"
   get "pages/contact"
   get 'seller' => "listings#seller"
