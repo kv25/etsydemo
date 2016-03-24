@@ -13,7 +13,6 @@ payment =
     if status == 200
       $('#new_order').append($('<input type="hidden" name="stripeToken" />').val(response.id))
       $('#new_order')[0].submit()
-      alert(response.id)
     else
       $('#stripe_error').text(response.error.message).show()
       $('input[type=submit]').attr('disabled', false)
